@@ -4,11 +4,14 @@ public class User {
     private String firstName;
     private String lastName;
     private String address;
+    private String type;
     private String cellPhone;
     private String email;
     private boolean isBlocked;
 
-    public User(String id, String password,  String firstName, String lastName, String address, String cellPhone, String email, boolean isBlocked) {
+    public User() {
+    }
+    public User(String id, String password,  String firstName, String lastName, String address, String cellPhone, String email, boolean isBlocked, String type) {
         this.id = id;
         this.password = password;
         this.firstName = firstName;
@@ -17,6 +20,7 @@ public class User {
         this.cellPhone = cellPhone;
         this.email = email;
         this.isBlocked = isBlocked;
+        this.type = type;
     }
 
     public String getId() {
@@ -55,6 +59,27 @@ public class User {
 
     public void setBlocked(boolean blocked) {
         isBlocked = blocked;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void user_search(int id){
+
+
+    }
+
+    
+
+    public void book_search(String title){
+        Book book = new Book(title);
+        if
+        
     }
 }
 
