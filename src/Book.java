@@ -35,4 +35,11 @@ public class Book {
         return "Book{" + "title=" + title + ", is_available=" + is_available + '}';
     }
 
+    public void add_book(Book book){
+        books[count]=book;
+    }
+
+    public static int getCount() {
+        return count;
+    }
 }
