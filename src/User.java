@@ -8,6 +8,7 @@ public class User {
     private String cellPhone;
     private String email;
     private boolean isBlocked;
+    private static int count=0;
 
     public User() {
     }
@@ -21,6 +22,7 @@ public class User {
         this.email = email;
         this.isBlocked = isBlocked;
         this.type = type;
+        count++;
     }
 
     public String getId() {
@@ -74,7 +76,9 @@ public class User {
 
     }
 
-    
+    private static int getCount() {
+        return count;
+    }
 
     public void book_search(String title){
         Book book = new Book(title);
