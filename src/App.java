@@ -280,5 +280,9 @@ private void showRemoveBookScene(){
     Scene removeBookScene = new Scene(removeBookForm, 400, 400);
     stage.setScene(removeBookScene);
 }
+
+public static void main(String[] args) {
+    launch(args);
+}
 }
 
