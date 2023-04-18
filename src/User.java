@@ -31,30 +31,61 @@ public class User {
         return id;
     }
 
+    public void setId(String id){
+        this.id = id;
+    }
+
     public String getPassword() {
         return password;
     }
 
+<<<<<<< HEAD
 
+=======
+    public void setPassword(String password){
+        this.password = password;
+    }
+    
+>>>>>>> 082556a99dc5a9b81821264621f6eebf66bf0a26
 
     public String getFirstName() {
         return firstName;
+    }
+
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
+    public void setLastName(String lastName){
+        this.lastName = lastName;
+    }
+
     public String getAddress() {
         return address;
+    }
+
+    public void setAddress(String address){
+        this.address = address;
     }
 
     public String getCellPhone() {
         return cellPhone;
     }
 
+    public void setCellPhone(String cellPhone ){
+        this.cellPhone = cellPhone;
+    }
+
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail() {
+        this.email = email;
     }
 
     public boolean isBlocked() {
@@ -71,11 +102,6 @@ public class User {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public void user_search(int id){
-
-
     }
 
     private static int getCount() {
