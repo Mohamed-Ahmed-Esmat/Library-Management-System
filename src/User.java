@@ -9,7 +9,7 @@ public class User {
     private String email;
     private boolean isBlocked;
     private static int count=0;
-
+    
     public User() {
     }
     public User(String id, String password,  String firstName, String lastName, String address, String cellPhone, String email, boolean isBlocked, String type) {
@@ -80,10 +80,6 @@ public class User {
         return count;
     }
 
-    public void book_search(String title){
-        Book book = new Book(title);
-        if
-        
-    }
+    
 }
 
