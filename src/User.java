@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class User {
     private String id;
     private String password;
@@ -9,7 +11,7 @@ public class User {
     private String email;
     private boolean isBlocked;
     private static int count=0;
-    
+
     public User() {
     }
     public User(String id, String password,  String firstName, String lastName, String address, String cellPhone, String email, boolean isBlocked, String type) {
@@ -33,7 +35,7 @@ public class User {
         return password;
     }
 
-   
+    
 
     public String getFirstName() {
         return firstName;
@@ -80,6 +82,31 @@ public class User {
         return count;
     }
 
+    private void book_search(String title, ArrayList<Book> books){
+        for (Book book : books) {
+            if (book.getTitle().equals(title)) {
+                System.out.println(book.toString());
+
+            }
+            else{
+                System.out.println("Book not found");
+            }
+        }
+       
     
-}
+    }   
+
+
+    private void user_search(String id, ArrayList<User> users){
+        for (User user : users) {
+            if (user.getId().equals(id)) {
+                System.out.println(user.toString());
+
+            }
+            else{
+                System.out.println("User not found");
+            }
+        }
+    }
+} 
 
