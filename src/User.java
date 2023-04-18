@@ -35,7 +35,7 @@ public class User {
         return password;
     }
 
-    
+
 
     public String getFirstName() {
         return firstName;
