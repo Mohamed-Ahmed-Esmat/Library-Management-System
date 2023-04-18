@@ -12,11 +12,20 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
+import java.util.ArrayList;
 import javafx.scene.layout.VBox;
 
 
 public class App extends Application {
 
+    ArrayList<User> users = new ArrayList<User>();
+    ArrayList<Book> books = new ArrayList<Book>();
+    User user1 = new User( "1", "1", "1", "1", "1", "1", "1", false, "librarian");
+    User user2 = new User( "2", "2", "2", "2", "2", "2", "2", false, "reader");
+    User user3 = new User( "3", "3", "3", "3", "3", "3", "3", false, "reader");
+    Book book1 = new Book("book1", true);
+    Book book2 = new Book("book2", true);
+    Book book3 = new Book("book3", false);
     // Declare variables for UI components
     private Stage stage;
     private BorderPane root;
@@ -32,7 +41,12 @@ public class App extends Application {
         // Initialize stage and root pane
         stage = primaryStage;
         root = new BorderPane();
-
+        users.add(user1);
+        users.add(user2);
+        users.add(user3);
+        books.add(book1);
+        books.add(book2);
+        books.add(book3);
         // Initialize UI components for login scene
         loginLabel = new Label("Library Management System");
         loginLabel.setStyle("-fx-font-size: 24px; -fx-padding: 10px;");
