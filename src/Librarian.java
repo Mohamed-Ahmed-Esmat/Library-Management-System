@@ -21,5 +21,8 @@ public class Librarian  extends User {
         users.remove(user);
     }
 
-    
+
+    public void block_user(ArrayList<User> users, User user){
+        user.setIsBlocked(true);
+    }
 }
