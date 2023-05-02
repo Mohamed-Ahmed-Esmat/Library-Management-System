@@ -25,7 +25,7 @@ public class Library {
         users.remove(user);
     }
 
-    private void book_search(String title, ArrayList<Book> books){
+    public void book_search(String title, ArrayList<Book> books){
         for (Book book : books) {
             if (book.getTitle().equals(title)) {
                 System.out.println(book.toString());
@@ -37,5 +37,17 @@ public class Library {
         }
        
     
+    }
+
+    private void user_search(String id, ArrayList<User> users){
+        for (User user : users) {
+            if (user.getId().equals(id)) {
+                System.out.println(user.toString());
+
+            }
+            else{
+                System.out.println("User not found");
+            }
+        }
     }
 }

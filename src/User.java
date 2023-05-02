@@ -103,16 +103,6 @@ public class User {
        
 
 
-    private void user_search(String id, ArrayList<User> users){
-        for (User user : users) {
-            if (user.getId().equals(id)) {
-                System.out.println(user.toString());
-
-            }
-            else{
-                System.out.println("User not found");
-            }
-        }
-    }
+   
 } 
 
