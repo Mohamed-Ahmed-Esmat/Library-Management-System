@@ -5,24 +5,14 @@ public class Librarian  extends User {
         super(id, password, firstName, lastName, address, cellPhone, email, isBlocked, "Librarian" );
     }
 
-    public void add_book(ArrayList<Book> books, Book book){
-        books.add(book);
-    }
+    
         
-    public void remove_book(ArrayList<Book> books, Book book){
-        books.remove(book);
-    }
+    
 
-    public void add_user(ArrayList<User> users, User user){
-        users.add(user);
-    }
+    
 
-    public void remove_user(ArrayList<User> users, User user){
-        users.remove(user);
-    }
+    
+    
 
-
-    public void block_user(ArrayList<User> users, User user){
-        user.setIsBlocked(true);
-    }
+    
 }

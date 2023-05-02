@@ -39,14 +39,6 @@ public class User {
         return password;
     }
 
-<<<<<<< HEAD
-
-=======
-    public void setPassword(String password){
-        this.password = password;
-    }
-    
->>>>>>> 082556a99dc5a9b81821264621f6eebf66bf0a26
 
     public String getFirstName() {
         return firstName;
@@ -108,19 +100,7 @@ public class User {
         return count;
     }
 
-    private void book_search(String title, ArrayList<Book> books){
-        for (Book book : books) {
-            if (book.getTitle().equals(title)) {
-                System.out.println(book.toString());
-
-            }
-            else{
-                System.out.println("Book not found");
-            }
-        }
        
-    
-    }   
 
 
     private void user_search(String id, ArrayList<User> users){
