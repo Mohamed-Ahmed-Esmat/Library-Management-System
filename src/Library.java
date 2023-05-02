@@ -39,7 +39,7 @@ public class Library {
     
     }
 
-    private void user_search(String id, ArrayList<User> users){
+    public void user_search(String id, ArrayList<User> users){
         for (User user : users) {
             if (user.getId().equals(id)) {
                 System.out.println(user.toString());

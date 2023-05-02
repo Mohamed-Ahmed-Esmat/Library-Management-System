@@ -19,7 +19,8 @@ public class Primary {
             System.out.println("3- Add User");
             System.out.println("4- Remove User");
             System.out.println("5- Search Book");
-            System.out.println("6- Exit");
+            System.out.println("6- Search User");
+            System.out.println("7- Exit");
             choice = input.nextInt();
             switch (choice) {
                 case 1:
@@ -81,6 +82,11 @@ public class Primary {
                     library.book_search(title2, library.books);
                     break;
                 case 6:
+                    System.out.println("Please enter the user ID");
+                    String id3 = input.nextLine();
+                    library.user_search(id3, library.users);
+                    break;
+                case 7:
                     System.out.println("Thank you for using the Library");
                     break;
                 default:
@@ -90,7 +96,7 @@ public class Primary {
 
     }
 }
-while(choice!=6);
+while(choice!=7);
 }
 
 //for reader
@@ -117,7 +123,5 @@ if(id.equals("2") && password.equals("2")){
     }
     while(choice!=2);
 }
-else{
-    System.out.println("Invalid ID or password"
 }
 }
