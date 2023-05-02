@@ -31,7 +31,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" + "title=" + title + ", is_available=" + is_available + '}';
+        return "Book{" + "title=" + title  + '}';
     }
 
     
