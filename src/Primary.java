@@ -7,6 +7,7 @@ public class Primary {
         Scanner input = new Scanner(System.in);
         Library library = new Library();
         int choice;
+        
         System.out.println("Welcome to the Library");
         System.out.println("Please enter your ID");
         String id = input.nextLine();
@@ -95,7 +96,8 @@ if(id.equals("2") && password.equals("2")){
     do{
         System.out.println("Please enter your choice");
         System.out.println("1- Search Book");
-        System.out.println("2- Exit");
+        System.out.println("2- Rent Book");
+        System.out.println("3- Exit");
         choice = input.nextInt();
         switch (choice) {
             case 1:
@@ -103,7 +105,12 @@ if(id.equals("2") && password.equals("2")){
                 String title = input.next();
                 library.book_search(title, library.books);
                 break;
-            case 2:
+            case 2: 
+                library.display_books(library.books); 
+                System.out.println("Enter the book title you want to rent");
+                String title1= input.next();
+                library.rent_book(title1,library.books);
+            case 3:
                 System.out.println("Thank you for using the Library");
                 break;
             default:
@@ -111,7 +118,7 @@ if(id.equals("2") && password.equals("2")){
                 break;
         }
     }
-    while(choice!=2);
+    while(choice!=3);
 }
 input.close();
 }
