@@ -21,7 +21,7 @@ public class Book {
         return title;
     }
 
-    public boolean isIs_available() {
+    public boolean Is_available() {
         return is_available;
     }
 

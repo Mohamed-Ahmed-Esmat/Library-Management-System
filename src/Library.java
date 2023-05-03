@@ -103,7 +103,24 @@ public class Library {
     }
 
 
-
+    public void rent_book(String title, ArrayList<Book> books){
+        Iterator<Book> iterator = books.iterator();
+        while (iterator.hasNext()) {
+            Book book = iterator.next();
+            if (book.getTitle().equals(title)) {
+                if(book.Is_available()){
+                    book.setIs_available(false);
+                    System.out.println("Book rented");
+                }
+                else{
+                    System.out.println("Book not available");
+                }
+            }
+            else{
+                System.out.println("Book not found");
+            }
+        }
+    }
 
 
 
