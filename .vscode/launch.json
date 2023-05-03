@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Primary",
+            "request": "launch",
+            "mainClass": "Primary",
+            "projectName": "Library-Management-System_c7136846"
+        },
+        {
+            "type": "java",
             "name": "Test",
             "request": "launch",
             "mainClass": "Test",

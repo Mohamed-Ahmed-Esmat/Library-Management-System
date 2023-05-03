@@ -16,7 +16,7 @@ public class Library {
 
         Book book1 = new Book("book1", true);
         Book book2 = new Book("book2", true);
-        Book book3 = new Book("book3", false);
+        Book book3 = new Book("book3", true);
 
         //users.add(user1);
         //users.add(user2);
@@ -103,22 +103,24 @@ public class Library {
     }
 
 
-    public void rent_book(String title, ArrayList<Book> books){
+    public void rent_book(String title, ArrayList<Book> books) {
+        boolean bookFound = false; // added a boolean flag to keep track of book availability
         Iterator<Book> iterator = books.iterator();
         while (iterator.hasNext()) {
             Book book = iterator.next();
             if (book.getTitle().equals(title)) {
-                if(book.Is_available()){
+                bookFound = true; // set flag to true if book is found
+                if (book.Is_available()) {
                     book.setIs_available(false);
                     System.out.println("Book rented");
-                }
-                else{
+                } else {
                     System.out.println("Book not available");
                 }
+                break; // exit the loop once the book is found and processed
             }
-            else{
-                System.out.println("Book not found");
-            }
+        }
+        if (!bookFound) { // output message if book is not found
+            System.out.println("Book not found");
         }
     }
 
