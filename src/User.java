@@ -100,7 +100,10 @@ public class User {
         return count;
     }
 
-       
+    @Override
+    public String toString(){
+        return "id= " + id + " first name= " + firstName + " last name= " + lastName + " adress= " + address + " cell phone= " + cellPhone + " email= " + email  ;
+    } 
 
 
    

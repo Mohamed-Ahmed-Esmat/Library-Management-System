@@ -18,11 +18,11 @@ public class Primary {
             System.out.println("Please enter your choice");
             System.out.println("1- Add Book");
             System.out.println("2- Remove Book");
-            System.out.println("3- Add User");
-            System.out.println("4- Remove User");
+            System.out.println("3- Add Reader");
+            System.out.println("4- Remove Reader");
             System.out.println("5- Search Book");
             System.out.println("6- Display Books");
-            System.out.println("7- Search User");
+            System.out.println("7- Search Reader");
             System.out.println("8- Exit");
             choice = input.nextInt();
             switch (choice) {
@@ -39,29 +39,29 @@ public class Primary {
                     library.remove_book(library.books, title1);
                     break;
                 case 3:
-                    System.out.println("Please enter the user ID");
-                    String id1 = input.nextLine();
-                    System.out.println("Please enter the user password");
-                    String password1 = input.nextLine();
-                    System.out.println("Please enter the user first name");
-                    String firstName = input.nextLine();
-                    System.out.println("Please enter the user last name");
-                    String lastName = input.nextLine();
-                    System.out.println("Please enter the user address");
-                    String address = input.nextLine();
-                    System.out.println("Please enter the user cell phone");
-                    String cellPhone = input.nextLine();
-                    System.out.println("Please enter the user email");
-                    String email = input.nextLine();
-                    System.out.println("Please enter the user type");
-                    String type = input.nextLine();
-                    User user = new User(id1, password1, firstName, lastName, address, cellPhone, email, false, type);
-                    library.add_user(library.users, user);
+                    System.out.println("Please enter the reader ID");
+                    String id1 = input.next();
+                    System.out.println("Please enter the reader password");
+                    String password1 = input.next();
+                    System.out.println("Please enter the reader first name");
+                    String firstName = input.next();
+                    System.out.println("Please enter the reader last name");
+                    String lastName = input.next();
+                    System.out.println("Please enter the reader address");
+                    String address = input.next();
+                    System.out.println("Please enter the reader cell phone");
+                    String cellPhone = input.next();
+                    System.out.println("Please enter the reader email");
+                    String email = input.next();
+                    System.out.println("Please enter the reader type");
+                    String type = input.next();
+                    Reader reader = new Reader(id1, password1, firstName, lastName, address, cellPhone, email, false, type);
+                    library.add_reader(library.readers, reader);
                     break;
                 case 4:
-                    System.out.println("Please enter the user ID");
+                    System.out.println("Please enter the reader ID");
                     String id2 = input.nextLine();
-                    library.remove_user(library.users, id2);
+                    library.remove_reader(library.readers, id2);
                     break;
                 case 5:
                     System.out.println("Please enter the book title");
@@ -72,9 +72,9 @@ public class Primary {
                     library.display_books(library.books);
                     break;
                 case 7:
-                    System.out.println("Please enter the user ID");
-                    String id3 = input.nextLine();
-                    library.user_search(id3, library.users);
+                    System.out.println("Please enter the reader ID");
+                    String id3 = input.next();
+                    library.reader_search(id3, library.readers);
                     break;
                 case 8:
                     System.out.println("Thank you for using the Library");
