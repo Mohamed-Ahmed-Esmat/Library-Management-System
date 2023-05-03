@@ -113,5 +113,6 @@ if(id.equals("2") && password.equals("2")){
     }
     while(choice!=2);
 }
+input.close();
 }
 }
