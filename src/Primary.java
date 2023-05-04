@@ -24,7 +24,12 @@ public class Primary {
             System.out.println("5- Search Book");
             System.out.println("6- Display Books");
             System.out.println("7- Search Reader");
-            System.out.println("8- Exit");
+            System.out.println("8- Block Reader");
+            System.out.println("9- Add Librarian");
+            System.out.println("10- Remove Librarian");
+            System.out.println("11- Search Librarian");
+            System.out.println("12- Block Librarian");
+            System.out.println("13- Exit");
             choice = input.nextInt();
             switch (choice) {
                 case 1:
@@ -61,7 +66,7 @@ public class Primary {
                     break;
                 case 4:
                     System.out.println("Please enter the reader ID");
-                    String id2 = input.nextLine();
+                    String id2 = input.next();
                     library.remove_reader(library.readers, id2);
                     break;
                 case 5:
@@ -78,6 +83,46 @@ public class Primary {
                     library.reader_search(id3, library.readers);
                     break;
                 case 8:
+                    System.out.println("Please enter the reader ID you want to block");
+                    String id4 = input.next();
+                    library.block_reader(library.readers, id4);
+                    break;
+                case 9:
+                    System.out.println("Please enter the Librarian ID");
+                    String id5 = input.next();
+                    System.out.println("Please enter the Librarian password");
+                    String password5 = input.next();
+                    System.out.println("Please enter the Librarian first name");
+                    String firstName1 = input.next();
+                    System.out.println("Please enter the Librarian last name");
+                    String lastName1 = input.next();
+                    System.out.println("Please enter the Librarian address");
+                    String address1 = input.next();
+                    System.out.println("Please enter the Librarian cell phone");
+                    String cellPhone1 = input.next();
+                    System.out.println("Please enter the Librarian email");
+                    String email1 = input.next();
+                    System.out.println("Please enter the Librarian type");
+                    String type1 = input.next();
+                    Librarian librarian = new Librarian(id5, password5, firstName1, lastName1, address1, cellPhone1, email1, false, type1);
+                    library.add_librarian(library.librarians, librarian);
+                    break;
+                case 10:
+                    System.out.println("Please enter the librarian ID");
+                    String id6 = input.next();
+                    library.remove_librarian(library.librarians, id6);
+                    break;
+                case 11:
+                    System.out.println("Please enter the librarian ID");
+                    String id7 = input.next();
+                    library.librarian_search(id7, library.librarians);
+                    break;
+                case 12:
+                    System.out.println("Please enter the librarian ID you want to block");
+                    String id8 = input.next();
+                    library.block_librarian(library.librarians, id8);
+                    break;
+                case 13:
                     System.out.println("Thank you for using the Library");
                     break;
                 default:
@@ -87,7 +132,7 @@ public class Primary {
 
     }
 }
-while(choice!=8);
+while(choice!=13);
 }
 
 //for reader

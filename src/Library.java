@@ -68,41 +68,6 @@ public class Library {
     }
 
 
-    
-
-    public void add_reader(ArrayList<Reader> readers, Reader reader){
-        readers.add(reader);
-    }
-
-    public void remove_reader(ArrayList<Reader> readers, String id){
-        Iterator<Reader> iterator = readers.iterator();
-        while (iterator.hasNext()) {
-            Reader reader = iterator.next();
-            if (reader.getId().equals(id)) {
-                iterator.remove();
-            }
-        }
-    }
-
-    
-
-    public void reader_search(String id1, ArrayList<Reader> readers){
-        int size = readers.size();
-        for (int i = 0 ; i<size ; i++) {
-
-            if(i>=size){
-                System.out.println("User not found");
-            }
-
-            if (id1.equals(readers.get(i).getId())){
-                System.out.println(readers.get(i).toString());
-                break;
-            }
-            
-        }
-    }
-
-
     public void rent_book(String title, ArrayList<Book> books) {
         boolean bookFound = false; // added a boolean flag to keep track of book availability
         Iterator<Book> iterator = books.iterator();
@@ -123,6 +88,97 @@ public class Library {
             System.out.println("Book not found");
         }
     }
+
+
+    
+
+    public void add_reader(ArrayList<Reader> readers, Reader reader){
+        readers.add(reader);
+    }
+
+    public void remove_reader(ArrayList<Reader> readers, String id){
+        Iterator<Reader> iterator = readers.iterator();
+        while (iterator.hasNext()) {
+            Reader reader = iterator.next();
+            if (reader.getId().equals(id)) {
+                iterator.remove();
+            }
+        }
+    }
+
+    public void reader_search(String id1, ArrayList<Reader> readers){
+        int size = readers.size();
+        for (int i = 0 ; i<size ; i++) {
+
+            if(i>=size){
+                System.out.println("Reader not found");
+            }
+
+            if (id1.equals(readers.get(i).getId())){
+                System.out.println(readers.get(i).toString());
+                break;
+            }
+            
+        }
+    }
+
+    public void block_reader(ArrayList<Reader> readers, String id) {
+
+        for (Reader reader : readers) {
+            if (reader.getId().equals(id)) {
+                reader.setBlocked(true);
+                System.out.println("Reader with ID: " + id + " has been blocked.");
+                return;
+            }
+        }
+
+        System.out.println("Reader with ID " + id + " not found.");
+    }
+
+    public void add_librarian(ArrayList<Librarian> librarians, Librarian librarian){
+        librarians.add(librarian);
+    }
+
+    public void remove_librarian(ArrayList<Librarian> librarians, String id){
+        Iterator<Librarian> iterator = librarians.iterator();
+        while (iterator.hasNext()) {
+            Librarian librarian = iterator.next();
+            if (librarian.getId().equals(id)) {
+                iterator.remove();
+            }
+        }
+    }
+
+    public void librarian_search(String id1, ArrayList<Librarian> librarians){
+        int size = librarians.size();
+        for (int i = 0 ; i<size ; i++) {
+
+            if(i>=size){
+                System.out.println("Librarian not found");
+            }
+
+            if (id1.equals(librarians.get(i).getId())){
+                System.out.println(librarians.get(i).toString());
+                break;
+            }
+            
+        }
+    }
+
+    public void block_librarian(ArrayList<Librarian> librarians, String id) {
+
+        for (Librarian librarian : librarians) {
+            if (librarian.getId().equals(id)) {
+                librarian.setBlocked(true);
+                System.out.println("Reader with ID: " + id + " has been blocked.");
+                return;
+            }
+        }
+
+        System.out.println("Reader with ID " + id + " not found.");
+    }
+
+    
 
 
 

@@ -25,6 +25,7 @@ public class User {
         this.isBlocked = isBlocked;
         this.type = type;
         count++;
+        ArrayList<Book> orderlist = new ArrayList<Book>();
     }
 
     public String getId() {
@@ -102,7 +103,7 @@ public class User {
 
     @Override
     public String toString(){
-        return "id= " + id + " first name= " + firstName + " last name= " + lastName + " adress= " + address + " cell phone= " + cellPhone + " email= " + email  ;
+        return "id= " + id + " first name= " + firstName + " last name= " + lastName + " adress= " + address + " cell phone= " + cellPhone + " email= " + email + " is blocked: " + isBlocked ;
     } 
 
 

@@ -9,6 +9,13 @@
             "name": "Primary",
             "request": "launch",
             "mainClass": "Primary",
+            "projectName": "Library-Management-System_eee001d"
+        },
+        {
+            "type": "java",
+            "name": "Primary",
+            "request": "launch",
+            "mainClass": "Primary",
             "projectName": "Library-Management-System_c7136846"
         },
         {
