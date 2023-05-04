@@ -7,12 +7,22 @@ public class Primary {
         Scanner input = new Scanner(System.in);
         Library library = new Library();
         int choice;
-        
         System.out.println("Welcome to the Library");
         System.out.println("Please enter your ID");
         String id = input.nextLine();
         System.out.println("Please enter your password");
         String password = input.nextLine();
+        int validation1 = library.validation_id(library.librarians, library.readers, id);
+        if(validation1 == 1){
+            Boolean val = library.validation_pass_librarian(library.librarians, id,  password);
+        }
+        else if(validation1 == 2){
+            Boolean val2 = library.validation_pass_reader(library.readers, id,  password);
+        }
+        else{
+            System.out.println("The id you entered does not belong to any user now");
+        }
+
         if (id.equals("1") && password.equals("1")) {
             System.out.println("Welcome Librarian");
        do{

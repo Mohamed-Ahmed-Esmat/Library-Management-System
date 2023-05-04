@@ -6,29 +6,32 @@ public class Library {
     ArrayList<Reader> readers = new ArrayList<Reader>();
     ArrayList<Librarian> librarians = new ArrayList<Librarian>();
     public Library() {
-        //User user1 = new User( "1", "1", "1", "1", "1", "1", "1", false, "librarian");
-        //User user2 = new User( "2", "2", "2", "2", "2", "2", "2", false, "reader");
-        //User user3 = new User( "3", "3", "3", "3", "3", "3", "3", false, "reader");
-
+        
         Librarian librarian1 = new Librarian( "1", "1", "1", "1", "1", "1", "1", false, "librarian");
-        Reader reader1 = new Reader( "2", "2", "2", "2", "2", "2", "2", false, "reader");
-        Reader reader2 = new Reader( "3", "3", "3", "3", "3", "3", "3", false, "reader");
+        Librarian librarian2 = new Librarian( "2", "2", "2", "2", "2", "2", "2", false, "librarian");
+        Librarian librarian3 = new Librarian( "3", "3", "3", "3", "3", "3", "3", false, "librarian");
+
+        Reader reader1 = new Reader( "4", "4", "4", "4", "4", "4", "4", false, "reader");
+        Reader reader2 = new Reader( "5", "5", "5", "5", "5", "5", "5", false, "reader");
+        Reader reader3 = new Reader( "6", "6", "6", "6", "6", "6", "6", false, "reader");
 
         Book book1 = new Book("book1", true);
         Book book2 = new Book("book2", true);
         Book book3 = new Book("book3", true);
 
-        //users.add(user1);
-        //users.add(user2);
-        //users.add(user3);
+        librarians.add(librarian1);
+        librarians.add(librarian2);
+        librarians.add(librarian3);
 
         readers.add(reader1);
         readers.add(reader2);
-        librarians.add(librarian1);
+        readers.add(reader3);
+
         books.add(book1);
         books.add(book2);
         books.add(book3);
     }
+
 
     public void add_book(ArrayList<Book> books, Book book){
         books.add(book);
@@ -67,7 +70,6 @@ public class Library {
     
     }
 
-
     public void rent_book(String title, ArrayList<Book> books) {
         boolean bookFound = false; // added a boolean flag to keep track of book availability
         Iterator<Book> iterator = books.iterator();
@@ -88,9 +90,6 @@ public class Library {
             System.out.println("Book not found");
         }
     }
-
-
-    
 
     public void add_reader(ArrayList<Reader> readers, Reader reader){
         readers.add(reader);
@@ -176,12 +175,103 @@ public class Library {
         }
 
         System.out.println("Reader with ID " + id + " not found.");
+    }  
+
+    public int validation_id(ArrayList<Librarian> librarians, ArrayList<Reader> readers, String id1){
+        boolean librarian;
+        boolean reader;
+        librarian = librarian_search2(id1, librarians);
+        reader = reader_search2(id1, readers);
+        if (librarian == true){
+            return 1;
+        }
+        else if(reader == true){
+            return 2;
+        }
+        else{
+            return 3;
+        }
     }
 
-    
+    public boolean validation_pass_librarian(ArrayList<Librarian> librarians, String id1, String pass){
+
+        String true_pass = librarians.get(librarian_search3(id1, librarians)).getPassword();
+
+        if (true_pass.equals(pass)){
+            return true; 
+        }
+        else{
+            return false;
+        }
+    }
+
+    public boolean validation_pass_reader(ArrayList<Reader> readers, String id1, String pass){
+
+        String true_pass = readers.get(reader_search3(id1, readers)).getPassword();
+        
+        if (true_pass.equals(pass)){
+            return true; 
+        }
+        else{
+            return false;
+        }
+    }
 
 
 
+
+//the next functions were made private to help in other functions in the same class
+
+    private boolean reader_search2(String id1, ArrayList<Reader> readers){
+        int size = readers.size();
+        for (int i = 0 ; i<size ; i++) {
+            if (id1.equals(readers.get(i).getId())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean librarian_search2(String id1, ArrayList<Librarian> librarians){
+        int size = librarians.size();
+        for (int i = 0 ; i<size ; i++) {
+            if (id1.equals(librarians.get(i).getId())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private int reader_search3(String id1, ArrayList<Reader> readers){
+        int size = readers.size();
+        for (int i = 0 ; i<size ; i++) {
+            if (id1.equals(readers.get(i).getId())){
+                return i;
+            }
+            
+        }
+        return 0;
+    }
+
+    private int librarian_search3(String id1, ArrayList<Librarian> librarians){
+        int size = librarians.size();
+        for (int i = 0 ; i<size ; i++) {
+            if (id1.equals(librarians.get(i).getId())){
+                return i;
+            }
+        }
+        return 0;
+    }
+
+
+
+        //User user1 = new User( "1", "1", "1", "1", "1", "1", "1", false, "librarian");
+        //User user2 = new User( "2", "2", "2", "2", "2", "2", "2", false, "reader");
+        //User user3 = new User( "3", "3", "3", "3", "3", "3", "3", false, "reader");
+
+        //users.add(user1);
+        //users.add(user2);
+        //users.add(user3);
 
 
     /*public void add_user(ArrayList<User> users, User user){
