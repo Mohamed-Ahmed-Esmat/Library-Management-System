@@ -76,12 +76,12 @@ public class Library {
         i = reader_search3(id1, readers );
         reader = readers.get(i);
         
-        boolean bookFound = false; // added a boolean flag to keep track of book availability
+        boolean bookFound = false; 
         Iterator<Book> iterator = books.iterator();
         while (iterator.hasNext()) {
             Book book = iterator.next();
             if (book.getTitle().equals(title)) {
-                bookFound = true; // set flag to true if book is found
+                bookFound = true; 
                 if (book.Is_available()) {
                     book.setIs_available(false);
                     System.out.println("Book rented");
@@ -91,10 +91,10 @@ public class Library {
                     System.out.println("Book not available");
                     
                 }
-                break; // exit the loop once the book is found and processed
+                break; 
             }
         }
-        if (!bookFound) { // output message if book is not found
+        if (!bookFound) { 
             System.out.println("Book not found");
         }
 
