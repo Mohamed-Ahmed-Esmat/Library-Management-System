@@ -70,7 +70,12 @@ public class Library {
     
     }
 
-    public void rent_book(String title, ArrayList<Book> books) {
+    public void rent_book(String title, ArrayList<Book> books, String id1) {
+        Reader reader;
+        int i = 0;
+        i = reader_search3(id1, readers );
+        reader = readers.get(i);
+        
         boolean bookFound = false; // added a boolean flag to keep track of book availability
         Iterator<Book> iterator = books.iterator();
         while (iterator.hasNext()) {
@@ -80,8 +85,11 @@ public class Library {
                 if (book.Is_available()) {
                     book.setIs_available(false);
                     System.out.println("Book rented");
+                    reader.addToOrderList(book);
+                    reader.displayOrderList();
                 } else {
                     System.out.println("Book not available");
+                    
                 }
                 break; // exit the loop once the book is found and processed
             }
@@ -89,6 +97,8 @@ public class Library {
         if (!bookFound) { // output message if book is not found
             System.out.println("Book not found");
         }
+
+        
     }
 
     public void add_reader(ArrayList<Reader> readers, Reader reader){
