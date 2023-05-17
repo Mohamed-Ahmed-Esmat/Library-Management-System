@@ -167,7 +167,7 @@ if(val2){
                 library.display_books(library.books); 
                 System.out.println("Enter the book title you want to rent");
                 String title1= input.next();
-                library.rent_book(title1, library.books , id);
+                library.rent_book(title1, library.books , id, library.readers);
             case 3:
                 System.out.println("Thank you for using the Library");
                 break;

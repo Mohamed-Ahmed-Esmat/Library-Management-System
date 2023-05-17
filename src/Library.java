@@ -47,7 +47,6 @@ public class Library {
         }
     }
     
-    //function to dipslay all books
     public void display_books(ArrayList<Book> books){
         for (Book book : books) {
             System.out.println(book.toString());
@@ -70,18 +69,22 @@ public class Library {
     
     }
 
-    public void rent_book(String title, ArrayList<Book> books, String id1) {
+    public void rent_book(String title, ArrayList<Book> books, String id1, ArrayList<Reader> readers) {
         Reader reader;
-        int i = 0;
-        i = reader_search3(id1, readers );
+        int i = reader_search3(id1, readers);
         reader = readers.get(i);
-        
-        boolean bookFound = false; 
+    
+        if (reader.isBlocked()) {
+            System.out.println("You are blocked, and you cannot rent the book");
+            return;
+        }
+    
+        boolean bookFound = false;
         Iterator<Book> iterator = books.iterator();
         while (iterator.hasNext()) {
             Book book = iterator.next();
             if (book.getTitle().equals(title)) {
-                bookFound = true; 
+                bookFound = true;
                 if (book.Is_available()) {
                     book.setIs_available(false);
                     System.out.println("Book rented");
@@ -89,16 +92,14 @@ public class Library {
                     reader.displayOrderList();
                 } else {
                     System.out.println("Book not available");
-                    
+    
                 }
-                break; 
+                break;
             }
         }
-        if (!bookFound) { 
+        if (!bookFound) {
             System.out.println("Book not found");
         }
-
-        
     }
 
     public void add_reader(ArrayList<Reader> readers, Reader reader){
